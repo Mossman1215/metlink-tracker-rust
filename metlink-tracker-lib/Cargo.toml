@@ -1,5 +1,5 @@
 [package]
-name = "metlink-tracker-rust"
+name = "metlink-tracker-lib"
 version = "0.1.0"
 authors = ["Moss Cantwell <mossman2142@gmail.com>"]
 edition = "2018"

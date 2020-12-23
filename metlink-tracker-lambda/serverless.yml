@@ -44,7 +44,7 @@ package:
 
 plugins:
   - serverless-rust
-
+  - serverless-offline
 functions:
   hello:
     # handler value syntax is `{cargo-package-name}.{bin-name}`
