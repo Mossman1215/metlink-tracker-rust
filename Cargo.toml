@@ -1,9 +1,11 @@
 [package]
-name = "metlink-tracker-rust"
+name = "metlink-tracker-cli"
 version = "0.1.0"
 authors = ["Moss Cantwell <mossman2142@gmail.com>"]
 edition = "2018"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[workspace]
 
 [dependencies]
+metlink-tracker-lib = { path = "metlink-tracker-lib" }
