@@ -9,3 +9,7 @@ edition = "2018"
 
 [dependencies]
 metlink-tracker-lib = { path = "metlink-tracker-lib" }
+postgres = "0.19.0"
+toml = "0.5.8"
+serde = {version = "1.0", features = ["derive"] }
+clap = "2"
