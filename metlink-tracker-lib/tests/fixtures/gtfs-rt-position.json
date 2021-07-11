@@ -1,0 +1,1197 @@
+{
+  "header": {
+    "gtfsRealtimeVersion": "2.0",
+    "incrementality": 0,
+    "timestamp": 1619384533
+  },
+  "entity": [
+    {
+      "id": "0a44fe15-fbe4-479e-8b25-b77a90963c21",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:30:00",
+          "trip_id": "2__0__717__NBM__8__8_1"
+        },
+        "vehicle": {
+          "id": "1187"
+        },
+        "position": {
+          "bearing": 354,
+          "latitude": -41.2817879,
+          "longitude": 174.7761536
+        }
+      }
+    },
+    {
+      "id": "17e71f4b-68cd-47c0-bb6c-e2976859b5bb",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:35:00",
+          "trip_id": "3__1__708__NBM__25__25_1"
+        },
+        "vehicle": {
+          "id": "1257"
+        },
+        "position": {
+          "bearing": 54,
+          "latitude": -41.278019,
+          "longitude": 174.77948
+        }
+      }
+    },
+    {
+      "id": "a107dfe0-6f1f-4500-9fb5-fe2c7c99a8d1",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:25:00",
+          "trip_id": "2__0__715__NBM__7__7_1"
+        },
+        "vehicle": {
+          "id": "1307"
+        },
+        "position": {
+          "bearing": 204,
+          "latitude": -41.2860413,
+          "longitude": 174.758316
+        }
+      }
+    },
+    {
+      "id": "da8f325d-e01c-4a4e-bf1b-cb2919b0a175",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:48:00",
+          "trip_id": "2__0__719__NBM__28__28_1"
+        },
+        "vehicle": {
+          "id": "1409"
+        },
+        "position": {
+          "bearing": 294,
+          "latitude": -41.3039131,
+          "longitude": 174.7937164
+        }
+      }
+    },
+    {
+      "id": "364e13dd-0a83-4605-a1e9-a51d510182c7",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:25:00",
+          "trip_id": "83__1__702__NBM__201__201_1"
+        },
+        "vehicle": {
+          "id": "1422"
+        },
+        "position": {
+          "bearing": 216,
+          "latitude": -41.2462769,
+          "longitude": 174.8161926
+        }
+      }
+    },
+    {
+      "id": "a553675c-9524-44b2-b9d2-a12cc9d018bb",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:19:00",
+          "trip_id": "2__1__716__NBM__1__1_1"
+        },
+        "vehicle": {
+          "id": "1428"
+        },
+        "position": {
+          "bearing": 216,
+          "latitude": -41.3193169,
+          "longitude": 174.8146057
+        }
+      }
+    },
+    {
+      "id": "8113d034-8876-4eab-8546-7e17cb9e7dc5",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:45:00",
+          "trip_id": "83__0__701__NBM__27__27_1"
+        },
+        "vehicle": {
+          "id": "1448"
+        },
+        "position": {
+          "bearing": 336,
+          "latitude": -41.2709427,
+          "longitude": 174.7815704
+        }
+      }
+    },
+    {
+      "id": "9c75d25d-26bb-4fc9-9ea0-633c6479521c",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "09:05:00",
+          "trip_id": "3__0__711__NBM__12__12_1"
+        },
+        "vehicle": {
+          "id": "1471"
+        },
+        "position": {
+          "bearing": 276,
+          "latitude": -41.2783928,
+          "longitude": 174.7792816
+        }
+      }
+    },
+    {
+      "id": "b54e1ade-9223-41a7-be66-ea1104b06b25",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:38:00",
+          "trip_id": "18e__1__704__NBM__5__5_1"
+        },
+        "vehicle": {
+          "id": "1479"
+        },
+        "position": {
+          "bearing": 294,
+          "latitude": -41.2935295,
+          "longitude": 174.776413
+        }
+      }
+    },
+    {
+      "id": "7d2cc2a7-9e35-4f51-b4f0-d5ed679477d1",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:50:00",
+          "trip_id": "2__1__722__NBM__2__2_1"
+        },
+        "vehicle": {
+          "id": "1480"
+        },
+        "position": {
+          "bearing": 114,
+          "latitude": -41.2873077,
+          "longitude": 174.7551117
+        }
+      }
+    },
+    {
+      "id": "8980eb87-b15f-412e-83b2-a405aff84ffa",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:32:00",
+          "trip_id": "2__1__718__NBM__15__15_1"
+        },
+        "vehicle": {
+          "id": "1509"
+        },
+        "position": {
+          "bearing": 138,
+          "latitude": -41.3165321,
+          "longitude": 174.7944946
+        }
+      }
+    },
+    {
+      "id": "927e326f-97cd-48f5-ade1-759d0c8be8b6",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "09:00:00",
+          "trip_id": "60__0__703__MNM__1021__1021_1"
+        },
+        "vehicle": {
+          "id": "1765"
+        },
+        "position": {
+          "bearing": 6,
+          "latitude": -41.2173882,
+          "longitude": 174.8094025
+        }
+      }
+    },
+    {
+      "id": "02e01e4d-1f9e-4183-8a72-635f9427075f",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:50:00",
+          "trip_id": "3__1__710__NBM__10__10_1"
+        },
+        "vehicle": {
+          "id": "2067"
+        },
+        "position": {
+          "bearing": 312,
+          "latitude": -41.3129272,
+          "longitude": 174.789093
+        }
+      }
+    },
+    {
+      "id": "9ede4be3-321d-4841-83a5-39f9832aaab2",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:35:00",
+          "trip_id": "3__0__707__NBM__200__200_1"
+        },
+        "vehicle": {
+          "id": "2078"
+        },
+        "position": {
+          "bearing": 198,
+          "latitude": -41.3199081,
+          "longitude": 174.7957458
+        }
+      }
+    },
+    {
+      "id": "ac795899-8cb4-4c8b-8e43-a1cfa2a4ccea",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:30:00",
+          "trip_id": "14__1__704__NBM__20__20_1"
+        },
+        "vehicle": {
+          "id": "2080"
+        },
+        "position": {
+          "bearing": 174,
+          "latitude": -41.2984161,
+          "longitude": 174.8009949
+        }
+      }
+    },
+    {
+      "id": "8de40525-e089-4237-b8c8-8b9dd083d867",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "09:02:00",
+          "trip_id": "21__1__702__NBM__17__17_1"
+        },
+        "vehicle": {
+          "id": "2081"
+        },
+        "position": {
+          "bearing": 162,
+          "latitude": -41.2853394,
+          "longitude": 174.7372284
+        }
+      }
+    },
+    {
+      "id": "4f1c6fcc-e090-4563-a371-34945f9874f7",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:40:00",
+          "trip_id": "18e__0__705__NBM__3__3_1"
+        },
+        "vehicle": {
+          "id": "2205"
+        },
+        "position": {
+          "bearing": 156,
+          "latitude": -41.3027382,
+          "longitude": 174.7745209
+        }
+      }
+    },
+    {
+      "id": "657e26ed-4fe2-4664-b2bf-af1f99f0b039",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:53:00",
+          "trip_id": "2__0__721__NBM__6__6_1"
+        },
+        "vehicle": {
+          "id": "2209"
+        },
+        "position": {
+          "bearing": 12,
+          "latitude": -41.321949,
+          "longitude": 174.8131561
+        }
+      }
+    },
+    {
+      "id": "3f4e35ac-f56c-4ade-9fa7-87f8f623b3d3",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:40:00",
+          "trip_id": "2__1__720__NBM__24__24_1"
+        },
+        "vehicle": {
+          "id": "2447"
+        },
+        "position": {
+          "bearing": 108,
+          "latitude": -41.2937889,
+          "longitude": 174.7827759
+        }
+      }
+    },
+    {
+      "id": "afcf1d43-c654-4c78-91f4-24c0229f43df",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:50:00",
+          "trip_id": "3__0__709__NBM__22__22_1"
+        },
+        "vehicle": {
+          "id": "2485"
+        },
+        "position": {
+          "bearing": 156,
+          "latitude": -41.303009,
+          "longitude": 174.7747192
+        }
+      }
+    },
+    {
+      "id": "b44b2961-78b3-4b12-b401-d3841533ef76",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:12:00",
+          "trip_id": "2__0__713__NBM__4__4_1"
+        },
+        "vehicle": {
+          "id": "2496"
+        },
+        "position": {
+          "bearing": 210,
+          "latitude": -41.2885246,
+          "longitude": 174.7237091
+        }
+      }
+    },
+    {
+      "id": "a461d389-66b1-4a65-aecc-6876a57688e4",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:40:00",
+          "trip_id": "14__0__707__NBM__11__11_1"
+        },
+        "vehicle": {
+          "id": "2528"
+        },
+        "position": {
+          "bearing": 330,
+          "latitude": -41.2896004,
+          "longitude": 174.775177
+        }
+      }
+    },
+    {
+      "id": "bd5e6ff4-dad8-4b23-88c0-5d93b3f48273",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:17:00",
+          "trip_id": "29__0__701__TZM__208__1__208__1_1"
+        },
+        "vehicle": {
+          "id": "3009"
+        },
+        "position": {
+          "bearing": 6,
+          "latitude": -41.3335838,
+          "longitude": 174.75737
+        }
+      }
+    },
+    {
+      "id": "79678c56-2a7c-4ffa-ac40-0aaff3fcc948",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "09:00:00",
+          "trip_id": "14__1__706__NBM__18__18_1"
+        },
+        "vehicle": {
+          "id": "3041"
+        },
+        "position": {
+          "bearing": 60,
+          "latitude": -41.2683487,
+          "longitude": 174.756546
+        }
+      }
+    },
+    {
+      "id": "3342281b-23c9-45e2-8138-9f4c691cee32",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:48:00",
+          "trip_id": "12__1__702__NBM__26__26_1"
+        },
+        "vehicle": {
+          "id": "3049"
+        },
+        "position": {
+          "bearing": 210,
+          "latitude": -41.3186417,
+          "longitude": 174.8023987
+        }
+      }
+    },
+    {
+      "id": "0177d2b7-60b6-4de9-a25b-d0d86ad1d63d",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "09:02:00",
+          "trip_id": "22__1__702__NBM__19__19_1"
+        },
+        "vehicle": {
+          "id": "3050"
+        },
+        "position": {
+          "bearing": 0,
+          "latitude": -41.2650986,
+          "longitude": 174.7641907
+        }
+      }
+    },
+    {
+      "id": "ff13f1e9-76f9-449e-b69d-f1243bed47c5",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "07:55:00",
+          "trip_id": "200__0__701__TZM__1002__1002_1"
+        },
+        "vehicle": {
+          "id": "3102"
+        },
+        "position": {
+          "bearing": 48,
+          "latitude": -40.9550934,
+          "longitude": 175.6530914
+        }
+      }
+    },
+    {
+      "id": "1060353c-8b00-4605-84de-45beebff5e15",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "09:00:00",
+          "trip_id": "160__0__703__TZM__405__405_1"
+        },
+        "vehicle": {
+          "id": "3110"
+        },
+        "position": {
+          "bearing": 96,
+          "latitude": -41.209568,
+          "longitude": 174.9106445
+        }
+      }
+    },
+    {
+      "id": "d79ca069-232b-4fdb-8473-014a275e4733",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:28:00",
+          "trip_id": "170__0__703__TZM__603__603_1"
+        },
+        "vehicle": {
+          "id": "3116"
+        },
+        "position": {
+          "bearing": 324,
+          "latitude": -41.2681465,
+          "longitude": 174.9520416
+        }
+      }
+    },
+    {
+      "id": "6c42e992-f8a7-472a-b352-fff368bad791",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:30:00",
+          "trip_id": "150__0__701__TZM__602__602_1"
+        },
+        "vehicle": {
+          "id": "3118"
+        },
+        "position": {
+          "bearing": 48,
+          "latitude": -41.211525,
+          "longitude": 174.9241943
+        }
+      }
+    },
+    {
+      "id": "47d4a8af-2f54-4700-9d14-6dfdf28c238d",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:33:00",
+          "trip_id": "17__1__700__TZM__109__109_1"
+        },
+        "vehicle": {
+          "id": "3122"
+        },
+        "position": {
+          "bearing": 54,
+          "latitude": -41.278141,
+          "longitude": 174.7794647
+        }
+      }
+    },
+    {
+      "id": "24c7957b-002e-44fc-a459-097baa3c540c",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:55:00",
+          "trip_id": "120__1__702__TZM__402__402_1"
+        },
+        "vehicle": {
+          "id": "3131"
+        },
+        "position": {
+          "bearing": 30,
+          "latitude": -41.1657944,
+          "longitude": 174.9848328
+        }
+      }
+    },
+    {
+      "id": "5f64d132-4a8b-4a41-aa67-da3b19dba3fd",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:30:00",
+          "trip_id": "130__1__704__TZM__401__401_1"
+        },
+        "vehicle": {
+          "id": "3136"
+        },
+        "position": {
+          "bearing": 24,
+          "latitude": -41.2291374,
+          "longitude": 174.8901825
+        }
+      }
+    },
+    {
+      "id": "68a1d2fb-3482-4e7b-8f70-2ae5713cfe43",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:36:00",
+          "trip_id": "150__1__702__TZM__406__406_1"
+        },
+        "vehicle": {
+          "id": "3139"
+        },
+        "position": {
+          "bearing": 18,
+          "latitude": -41.2130356,
+          "longitude": 174.895752
+        }
+      }
+    },
+    {
+      "id": "6ee1cad2-d189-43a3-8668-18bbfbebf14d",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:12:00",
+          "trip_id": "220__1__700__TZM__305__305_1"
+        },
+        "vehicle": {
+          "id": "3164"
+        },
+        "position": {
+          "bearing": 348,
+          "latitude": -41.1211433,
+          "longitude": 174.8765259
+        }
+      }
+    },
+    {
+      "id": "22abc2a2-13c0-4c0c-bea3-ff720a0c2703",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "09:14:00",
+          "trip_id": "210__1__704__TZM__303__2__303__2_1"
+        },
+        "vehicle": {
+          "id": "3174"
+        },
+        "position": {
+          "bearing": 114,
+          "latitude": -41.1115875,
+          "longitude": 174.8234253
+        }
+      }
+    },
+    {
+      "id": "f1020bfd-377d-4c7c-ad41-25e9c0ab4cfa",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:10:00",
+          "trip_id": "24__0__701__TZM__108__108_1"
+        },
+        "vehicle": {
+          "id": "3179"
+        },
+        "position": {
+          "bearing": 60,
+          "latitude": -41.2558556,
+          "longitude": 174.7959137
+        }
+      }
+    },
+    {
+      "id": "129ab9f0-bff4-4981-aa52-3789121957d9",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "09:00:00",
+          "trip_id": "130__1__706__TZM__502__2__502__2_1"
+        },
+        "vehicle": {
+          "id": "3309"
+        },
+        "position": {
+          "bearing": 60,
+          "latitude": -41.1975403,
+          "longitude": 174.9489899
+        }
+      }
+    },
+    {
+      "id": "59b4d22b-fc2d-420a-a49b-d7fcdba54865",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "09:00:00",
+          "trip_id": "7__0__705__TZM__202__202_1"
+        },
+        "vehicle": {
+          "id": "3404"
+        },
+        "position": {
+          "bearing": 198,
+          "latitude": -41.2822113,
+          "longitude": 174.7759094
+        }
+      }
+    },
+    {
+      "id": "6bfa9293-997a-45c1-8122-484a6a972df0",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:46:00",
+          "trip_id": "23__0__701__TZM__105__105_1"
+        },
+        "vehicle": {
+          "id": "3414"
+        },
+        "position": {
+          "bearing": 102,
+          "latitude": -41.2939377,
+          "longitude": 174.7836609
+        }
+      }
+    },
+    {
+      "id": "1d283349-7fc4-426b-8e84-51c95d8acdd7",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:32:00",
+          "trip_id": "1__1__706__TZM__107__107_1"
+        },
+        "vehicle": {
+          "id": "3431"
+        },
+        "position": {
+          "bearing": 198,
+          "latitude": -41.2841568,
+          "longitude": 174.7750702
+        }
+      }
+    },
+    {
+      "id": "26f1f64c-4fb5-406c-8acc-ceeaa0f36a49",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "09:00:00",
+          "trip_id": "25__0__703__TZM__205__1__205__1_1"
+        },
+        "vehicle": {
+          "id": "3438"
+        },
+        "position": {
+          "bearing": 324,
+          "latitude": -41.2910156,
+          "longitude": 174.7565002
+        }
+      }
+    },
+    {
+      "id": "5e5423ff-d0c5-44a0-9b5d-769f2e8855ca",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:12:00",
+          "trip_id": "220__0__701__TZM__306__306_1"
+        },
+        "vehicle": {
+          "id": "3439"
+        },
+        "position": {
+          "bearing": 84,
+          "latitude": -41.1138725,
+          "longitude": 174.848053
+        }
+      }
+    },
+    {
+      "id": "96d3077b-e908-4717-a840-b9cbd3fd3826",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:49:00",
+          "trip_id": "19__0__703__TZM__210__1__210__1_1"
+        },
+        "vehicle": {
+          "id": "3442"
+        },
+        "position": {
+          "bearing": 30,
+          "latitude": -41.2127495,
+          "longitude": 174.8064575
+        }
+      }
+    },
+    {
+      "id": "26d9fb91-3e2f-42fc-ac4d-7a56e85e60ce",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:45:00",
+          "trip_id": "24__1__700__TZM__104__2__104__2_1"
+        },
+        "vehicle": {
+          "id": "3449"
+        },
+        "position": {
+          "bearing": 66,
+          "latitude": -41.2471771,
+          "longitude": 174.7912292
+        }
+      }
+    },
+    {
+      "id": "ca381db4-56dd-4254-b633-1b8f35c5be2b",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "09:00:00",
+          "trip_id": "1__1__710__TZM__211__1__211__1_1"
+        },
+        "vehicle": {
+          "id": "3701"
+        },
+        "position": {
+          "bearing": 150,
+          "latitude": -41.2006264,
+          "longitude": 174.8301697
+        }
+      }
+    },
+    {
+      "id": "efda2917-eacd-41e9-a945-717a15fcd514",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:30:00",
+          "trip_id": "1__0__709__TZM__111__111_1"
+        },
+        "vehicle": {
+          "id": "3703"
+        },
+        "position": {
+          "bearing": 60,
+          "latitude": -41.2760773,
+          "longitude": 174.7817078
+        }
+      }
+    },
+    {
+      "id": "e34b7a5c-dd7d-40dc-933e-88f9d7f21f87",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:45:00",
+          "trip_id": "1__0__711__TZM__112__112_1"
+        },
+        "vehicle": {
+          "id": "3705"
+        },
+        "position": {
+          "bearing": 348,
+          "latitude": -41.3111649,
+          "longitude": 174.7789917
+        }
+      }
+    },
+    {
+      "id": "015033e4-fe9b-4a61-9a22-8ebcd9ac5f4a",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:00:00",
+          "trip_id": "1__0__705__TZM__102__102_1"
+        },
+        "vehicle": {
+          "id": "3707"
+        },
+        "position": {
+          "bearing": 156,
+          "latitude": -41.1895981,
+          "longitude": 174.8072968
+        }
+      }
+    },
+    {
+      "id": "0163abb1-12b5-41fd-a62f-48048d3333d7",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:00:00",
+          "trip_id": "1__1__702__TZM__207__1__207__1_1"
+        },
+        "vehicle": {
+          "id": "3708"
+        },
+        "position": {
+          "bearing": 282,
+          "latitude": -41.3430824,
+          "longitude": 174.7707062
+        }
+      }
+    },
+    {
+      "id": "e6be95b9-5130-445c-bc0a-b88c0be5a078",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "09:00:00",
+          "trip_id": "25__1__702__TZM__203__3__203__3_1"
+        },
+        "vehicle": {
+          "id": "3748"
+        },
+        "position": {
+          "bearing": 246,
+          "latitude": -41.2490158,
+          "longitude": 174.7881775
+        }
+      }
+    },
+    {
+      "id": "9cd27201-33f6-4a09-bad3-a03b4bf3da20",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:42:00",
+          "trip_id": "220__0__703__TZM__307__307_1"
+        },
+        "vehicle": {
+          "id": "3758"
+        },
+        "position": {
+          "bearing": 180,
+          "latitude": -41.1379738,
+          "longitude": 174.8431396
+        }
+      }
+    },
+    {
+      "id": "60d124b5-2458-4292-96b8-2f381f0d5248",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:15:00",
+          "trip_id": "1__1__704__TZM__201__1__201__1_1"
+        },
+        "vehicle": {
+          "id": "3791"
+        },
+        "position": {
+          "bearing": 180,
+          "latitude": -41.3153152,
+          "longitude": 174.7781067
+        }
+      }
+    },
+    {
+      "id": "a5470331-78c1-406e-a6cb-f937aa487a66",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:55:00",
+          "trip_id": "27__0__701__TZM__110__110_1"
+        },
+        "vehicle": {
+          "id": "3816"
+        },
+        "position": {
+          "bearing": 144,
+          "latitude": -41.2900848,
+          "longitude": 174.7754517
+        }
+      }
+    },
+    {
+      "id": "0f66f26d-8ae8-47fe-a68b-5884b490379a",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:45:00",
+          "trip_id": "230__0__701__TZM__301__301_1"
+        },
+        "vehicle": {
+          "id": "3845"
+        },
+        "position": {
+          "bearing": 24,
+          "latitude": -41.1066437,
+          "longitude": 174.8864441
+        }
+      }
+    },
+    {
+      "id": "4fa28195-dbf7-4e3f-b3cf-a339dd851617",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:35:00",
+          "trip_id": "110__1__706__TZM__504__504_1"
+        },
+        "vehicle": {
+          "id": "3854"
+        },
+        "position": {
+          "bearing": 222,
+          "latitude": -41.1470375,
+          "longitude": 174.997467
+        }
+      }
+    },
+    {
+      "id": "5f7d8d1c-10c1-4aae-a595-3b371239e299",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:45:00",
+          "trip_id": "1__1__708__TZM__101__101_1"
+        },
+        "vehicle": {
+          "id": "3890"
+        },
+        "position": {
+          "bearing": 186,
+          "latitude": -41.2471657,
+          "longitude": 174.8134308
+        }
+      }
+    },
+    {
+      "id": "9cc12849-db27-43d4-a7d6-5458cb0fddc8",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:15:00",
+          "trip_id": "1__0__707__TZM__106__106_1"
+        },
+        "vehicle": {
+          "id": "3965"
+        },
+        "position": {
+          "bearing": 48,
+          "latitude": -41.2228012,
+          "longitude": 174.8050385
+        }
+      }
+    },
+    {
+      "id": "d17db6e4-1926-487e-862b-3c19dee8eab7",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "09:00:00",
+          "trip_id": "1__0__713__TZM__209__3__209__3_1"
+        },
+        "vehicle": {
+          "id": "3972"
+        },
+        "position": {
+          "bearing": 6,
+          "latitude": -41.3349648,
+          "longitude": 174.7733307
+        }
+      }
+    },
+    {
+      "id": "d0294063-78f1-4dc8-8733-41c595ae8c57",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:30:00",
+          "trip_id": "52__0__701__MNM__1011__1011_1"
+        },
+        "vehicle": {
+          "id": "7153"
+        },
+        "position": {
+          "bearing": 354,
+          "latitude": -41.2232933,
+          "longitude": 174.8236389
+        }
+      }
+    },
+    {
+      "id": "01718d34-76ff-479d-8eec-69f63e6e802c",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:30:00",
+          "trip_id": "52__1__702__MNM__1031__1031_1"
+        },
+        "vehicle": {
+          "id": "7155"
+        },
+        "position": {
+          "bearing": 216,
+          "latitude": -41.2659454,
+          "longitude": 174.782959
+        }
+      }
+    },
+    {
+      "id": "3161439f-83b3-4925-83cd-e6c1fe640d2f",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:10:00",
+          "trip_id": "110__0__701__TZM__403__403_1"
+        },
+        "vehicle": {
+          "id": "8020"
+        },
+        "position": {
+          "bearing": 78,
+          "latitude": -41.1240654,
+          "longitude": 175.0740204
+        }
+      }
+    },
+    {
+      "id": "2e398b68-8024-4363-ba13-df46c883a122",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "09:05:00",
+          "trip_id": "262__1__702__UZM__105__3__105__3_1"
+        },
+        "vehicle": {
+          "id": "9011"
+        },
+        "position": {
+          "bearing": 0,
+          "latitude": -40.8935776,
+          "longitude": 174.9812012
+        }
+      }
+    },
+    {
+      "id": "10991402-31cd-4da3-8372-ed7fc3fb157e",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:54:00",
+          "trip_id": "261__0__703__UZM__116__4__116__4_1"
+        },
+        "vehicle": {
+          "id": "9013"
+        },
+        "position": {
+          "bearing": 342,
+          "latitude": -40.9011879,
+          "longitude": 175.0017548
+        }
+      }
+    },
+    {
+      "id": "04bdedae-2cae-4fed-9812-f4ad76ed05d0",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:54:00",
+          "trip_id": "260__0__705__UZM__109__3__109__3_1"
+        },
+        "vehicle": {
+          "id": "9017"
+        },
+        "position": {
+          "bearing": 318,
+          "latitude": -40.9071045,
+          "longitude": 174.9983673
+        }
+      }
+    },
+    {
+      "id": "b22814e7-61e3-4d90-96b5-d8d070e7dcb4",
+      "vehicle": {
+        "trip": {
+          "schedule_relationship": 0,
+          "start_time": "08:40:00",
+          "trip_id": "290__0__701__UZM__107__4__107__4_1"
+        },
+        "vehicle": {
+          "id": "9018"
+        },
+        "position": {
+          "bearing": 204,
+          "latitude": -40.7603111,
+          "longitude": 175.1693726
+        }
+      }
+    }
+  ]
+}
