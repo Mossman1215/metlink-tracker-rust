@@ -19,11 +19,11 @@ fn main() {
     let conf = load_config();
     let delay = time::Duration::from_millis(500);
     let token = conf.api_key;
-    println!("route\tvehicle\tlong\tlat\tbearing");
+    println!("route,vehicle,long,lat,bearing");
     let service = metlink_tracker_lib::fetch_vehicles_v1(token);
     thread::sleep(delay);
     for vehicle in service.iter() {
-        println!("{}\t{}\t{}\t{}\t{}",vehicle.trip_id,vehicle.vehicle_id,vehicle.longitude, vehicle.latitude, vehicle.bearing)
+        println!("{},{},{},{},{}",vehicle.trip_id,vehicle.vehicle_id,vehicle.longitude, vehicle.latitude, vehicle.bearing)
     }
 
 }
