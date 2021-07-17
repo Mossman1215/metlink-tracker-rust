@@ -19,49 +19,21 @@ pub struct GtfsVehiclePos{
     pub trip_id: String,
 }
 
-pub fn fetch_vehicles_v1(token: String) -> Vec<MetlinkVehicle>{
+pub fn fetch_vehicles_v1(token: String) -> Vec<GtfsVehiclePos>{
     let url = String::from("https://api.opendata.metlink.org.nz/v1/gtfs-rt/vehiclepositions");
     let client = reqwest::blocking::Client::new();
-    let thing = client.get(&url).header("x-api-key",token).header(reqwest::header::ACCEPT,"application/json");
-    let met_response = thing.send().unwrap();
+    let request = client.get(&url).header("x-api-key",token).header(reqwest::header::ACCEPT,"application/json");
+    let met_response = request.send().unwrap();
     let met_code = met_response.status();
+    let mut vehicles = Vec::new();
     if met_code.is_success(){ 
     let body = met_response.text().unwrap();
-
-    let v: Value = serde_json::from_str(&body).unwrap();
-    let timestamp = v["LastModified"].as_str().unwrap();
-    //if v["Services"] > 0
-    let services = v["Services"].as_array().unwrap();
-    let mut vehicles: Vec<MetlinkVehicle> =  Vec::new();
-    if services.len() > 0 {
-        for vehicle_json in services.iter(){
-            let service_json = vehicle_json["Service"].as_object().unwrap();
-            let method_str = service_json["Mode"].as_str().unwrap();
-            let method = match method_str {
-                "Bus" => VehicleMethod::Bus,
-                "Train" => VehicleMethod::Train,
-                _ => VehicleMethod::Other,
-            };
-            vehicles.push(MetlinkVehicle {
-                last_modified: String::from(timestamp),
-                report_time: String::from(vehicle_json["RecordedAtTime"].as_str().unwrap()),
-                vehicle_id: String::from(vehicle_json["VehicleRef"].as_str().unwrap()),
-                service_id: String::from(vehicle_json["ServiceID"].as_str().unwrap()),
-                longitude: String::from(vehicle_json["Long"].as_str().unwrap()),
-                latitude: String::from(vehicle_json["Lat"].as_str().unwrap()),
-                bearing: String::from(vehicle_json["Bearing"].as_str().unwrap()),
-                late: vehicle_json["BehindSchedule"].as_bool().unwrap(),
-                service_direction: String::from(vehicle_json["Bearing"].as_str().unwrap()),
-                destination_id: String::from(vehicle_json["DestinationStopID"].as_str().unwrap()),
-                delayed_sec: vehicle_json["DelaySeconds"].as_i64().unwrap(),
-                method: method,
-            });
-        }
-    }
+        vehicles = parse_vehicles(body);
+    }else   {
+    println!("Request Failed. Status: {:?}", met_code);
     return vehicles;
     }
-    println!("Something else happened. Status: {:?}", met_code);
-    return Vec::new();
+    return vehicles;
 }
 // parse a json response from realtime feed
 pub fn parse_vehicles(contents: String)-> Vec<GtfsVehiclePos>{
