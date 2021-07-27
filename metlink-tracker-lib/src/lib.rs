@@ -9,6 +9,7 @@ pub enum VehicleMethod{
 }
 
 pub struct GtfsVehiclePos{
+    pub timestamp: i64,
     pub position_id: String,
     pub longitude: f64, 
     pub latitude: f64,
@@ -40,7 +41,7 @@ pub fn parse_vehicles(contents: String)-> Vec<GtfsVehiclePos>{
     let v: Value = serde_json::from_str(&contents).expect("failed to parse as json");
     //load tests/fixtures/gtfs-rt-position.json
     let header = v["header"].as_object().unwrap();
-    //let timestamp = header["timestamp"].as_str().unwrap();
+    let timestamp = header["timestamp"].as_i64().unwrap();
     //if v["Services"] > 0
     let entities = v["entity"].as_array().unwrap();
     //contstruct a GtfsVehiclePos from the first item in the list (.entity[0] in jq)
@@ -51,6 +52,7 @@ pub fn parse_vehicles(contents: String)-> Vec<GtfsVehiclePos>{
         let trip_hash = vehic_details["trip"].as_object().expect("failed to decode trip details");
         let second_vehic = vehic_details["vehicle"].as_object().unwrap();
         let first_pos = GtfsVehiclePos {
+            timestamp: timestamp,
             position_id: String::from(trip["id"].as_str().unwrap()),
             longitude: pos_hash["longitude"].as_f64().unwrap(), 
             latitude: pos_hash["latitude"].as_f64().unwrap(),
