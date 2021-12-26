@@ -1,11 +1,26 @@
 use serde_json::{Result, Value};
 use reqwest::header;
 use reqwest::blocking;
+use serde::{Serialize, Deserialize};
 
 pub enum VehicleMethod{
     Bus,
     Train,
     Other
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct GtfsRoute{
+ pub id: i64,
+ pub route_id: String,
+ pub agency_id: String,
+ pub route_short_name:  String,
+ pub route_long_name: String,
+ pub route_desc: String,
+ pub route_type: i64,
+ pub route_color: String,
+ pub route_text_color: String,
+ pub route_url: String,
 }
 
 pub struct GtfsVehiclePos{
@@ -73,7 +88,7 @@ mod tests {
     use std::io::prelude::*;
     use std::fs::File;
     #[test]
-    fn struct_create() {
+    fn struct_create_pos() {
         let mut file = File::open("tests/fixtures/gtfs-rt-position.json").expect("Unable to open the file");
         let mut contents = String::new();
         file.read_to_string(&mut contents).expect("Unable to read the file");
@@ -82,5 +97,14 @@ mod tests {
         let first_pos = trips.first().unwrap();
         assert_eq!(String::from("2__0__717__NBM__8__8_1"),first_pos.trip_id);
         assert_eq!(174.7761536,first_pos.longitude);
+    }
+    #[test]
+    fn struct_crete_route(){
+        let mut file = File::open("tests/fixtures/gtfs-route.json").expect("Unable to open the file");
+        let mut contents = String::new();
+        file.read_to_string(&mut contents).expect("Unable to read the file");
+        let route: GtfsRoute = serde_json::from_str(contents.as_str()).expect("failed to parse route data");
+        assert_eq!(String::from("1"),route.route_short_name);
+        assert_eq!(3,route.route_type);
     }
 }
