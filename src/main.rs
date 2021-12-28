@@ -1,5 +1,5 @@
 //extern crate postgres;
-use metlink_tracker_lib;
+use metlink_tracker_lib::{GtfsRoute,GtfsVehiclePos};
 use serde::{Serialize, Deserialize};
 use std::fs;
 use geojson::{Feature, GeoJson, Geometry, Value, FeatureCollection};
@@ -28,30 +28,7 @@ fn main() {
     let token = conf.api_key;
     let service = metlink_tracker_lib::fetch_vehicles_v1(token);
     if args.is_present("geojson") {
-        let mut geometry: Vec<Feature> = Vec::new();
-        for vehic in service.iter() {
-            let mut properties = Map::new();
-            properties.insert(String::from("Vehicle ID"),to_value(vehic.vehicle_id.clone()).unwrap());
-            properties.insert(String::from("Schedule"),to_value(vehic.schedule_relation).unwrap());
-            properties.insert(String::from("Start time"),to_value(vehic.start_time.clone()).unwrap());
-            properties.insert(String::from("Trip Id"),to_value(vehic.trip_id.clone()).unwrap());
-            properties.insert(String::from("Timestamp"),to_value(vehic.timestamp.clone()).unwrap());
-            properties.insert(String::from("Bearing"),to_value(vehic.bearing).unwrap());
-
-            geometry.push(Feature{
-                bbox: None,
-                geometry: Some(Geometry::new(Value::Point(vec![vehic.longitude,vehic.latitude]))),
-                id: None,
-                properties: Some(properties),
-                foreign_members: None
-            })
-        }
-        let feat_collection = FeatureCollection {
-            bbox: None,
-            features: geometry,
-            foreign_members: None,
-        };
-        println!("{}",GeoJson::from(feat_collection).to_string());
+        print_geojson(service);
     }else{
         println!("route,vehicle,long,lat,bearing");
         for vehicle in service.iter() {
@@ -61,7 +38,32 @@ fn main() {
     
 
 }
+fn print_geojson(service: Vec<GtfsVehiclePos>){
+    let mut geometry: Vec<Feature> = Vec::new();
+    for vehic in service.iter() {
+        let mut properties = Map::new();
+        properties.insert(String::from("Vehicle ID"),to_value(vehic.vehicle_id.clone()).unwrap());
+        properties.insert(String::from("Schedule"),to_value(vehic.schedule_relation).unwrap());
+        properties.insert(String::from("Start time"),to_value(vehic.start_time.clone()).unwrap());
+        properties.insert(String::from("Trip Id"),to_value(vehic.trip_id.clone()).unwrap());
+        properties.insert(String::from("Timestamp"),to_value(vehic.timestamp.clone()).unwrap());
+        properties.insert(String::from("Bearing"),to_value(vehic.bearing).unwrap());
 
+        geometry.push(Feature{
+            bbox: None,
+            geometry: Some(Geometry::new(Value::Point(vec![vehic.longitude,vehic.latitude]))),
+            id: None,
+            properties: Some(properties),
+            foreign_members: None
+        })
+    }
+    let feat_collection = FeatureCollection {
+        bbox: None,
+        features: geometry,
+        foreign_members: None,
+    };
+    println!("{}",GeoJson::from(feat_collection).to_string());
+}
 #[derive(Deserialize)]
 struct Config{
     hostname: String,
@@ -76,6 +78,6 @@ let contents = fs::read_to_string("./metlink-tracker.toml")
 //convert to a config struct
 toml::from_str(contents.as_str()).expect("error parsing toml config")
 }
-fn pushtoDB(){
+fn push_to_db(){
 
 }

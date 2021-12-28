@@ -51,6 +51,27 @@ pub fn fetch_vehicles_v1(token: String) -> Vec<GtfsVehiclePos>{
     }
     return vehicles;
 }
+pub fn fetch_routes_v1(token: String) -> Vec<GtfsRoute>{
+    let url = String::from("https://api.opendata.metlink.org.nz/v1/gtfs/routes");
+    let client = reqwest::blocking::Client::new();
+    let request = client.get(&url).header("x-api-key",token).header(reqwest::header::ACCEPT,"application/json");
+    let met_response = request.send().unwrap();
+    let met_code = met_response.status();
+    let mut routes = Vec::new();
+    if met_code.is_success(){ 
+        let body = met_response.text().unwrap();
+        routes = parse_routes(body);
+    }else   {
+        println!("Request Failed. Status: {:?}", met_code);
+        return routes;
+    }
+    return routes;
+}
+//parse json api from routes feed
+pub fn parse_routes(contents: String)-> Vec<GtfsRoute>{
+    let v: Vec<GtfsRoute> = serde_json::from_str(&contents).expect("failed to parse as json");
+    return v;
+}
 // parse a json response from realtime feed
 pub fn parse_vehicles(contents: String)-> Vec<GtfsVehiclePos>{
     let v: Value = serde_json::from_str(&contents).expect("failed to parse as json");
