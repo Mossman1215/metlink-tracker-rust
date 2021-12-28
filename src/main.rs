@@ -5,7 +5,7 @@ use std::fs;
 use geojson::{Feature, GeoJson, Geometry, Value, FeatureCollection};
 use geo::Point;
 use serde_json::{Map, to_value};
-use clap::{App,Arg};
+use clap::{App,Arg,SubCommand};
 
 
 //use postgres::{Connection, TlsMode};
@@ -21,18 +21,30 @@ fn main() {
     //  push data to postgres db (retry 3x then crash)
 
    let args = App::new("metlink-tracker")
-   .version("0.1").about("fetch gtfs real time data from metlink").arg(Arg::with_name("geojson")
-   .help("use geojson format output").takes_value(false).required(false))
+   .version("0.1").about("fetch gtfs real time data from metlink")
+   .subcommand(SubCommand::with_name("positions"))
+   .arg(Arg::with_name("geojson")
+   .help("use geojson format output")
+   .takes_value(false).required(false))
+   .subcommand(SubCommand::with_name("routes"))
    .get_matches();
     let conf = load_config();
     let token = conf.api_key;
-    let service = metlink_tracker_lib::fetch_vehicles_v1(token);
-    if args.is_present("geojson") {
-        print_geojson(service);
-    }else{
-        println!("route,vehicle,long,lat,bearing");
-        for vehicle in service.iter() {
-            println!("{},{},{},{},{}",vehicle.trip_id,vehicle.vehicle_id,vehicle.longitude, vehicle.latitude, vehicle.bearing)
+    if let Some(args) = args.subcommand_matches("positions") {
+        let service = metlink_tracker_lib::fetch_vehicles_v1(token.clone());
+        if args.is_present("geojson") {
+            print_geojson(service);
+        }else{
+            println!("route,vehicle,long,lat,bearing");
+            for vehicle in service.iter() {
+                println!("{},{},{},{},{}",vehicle.trip_id,vehicle.vehicle_id,vehicle.longitude, vehicle.latitude, vehicle.bearing)
+            }
+        }
+    }
+    if let Some(args) = args.subcommand_matches("routes") {
+        let routes = metlink_tracker_lib::fetch_routes_v1(token.clone());
+        for route in routes.iter() {
+            println!("{},{}",route.route_short_name,route.route_long_name);
         }
     }
     
