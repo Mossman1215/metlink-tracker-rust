@@ -6,7 +6,47 @@ use geojson::{Feature, GeoJson, Geometry, Value, FeatureCollection};
 use geo::Point;
 use serde_json::{Map, to_value};
 use clap::{App,Arg,SubCommand};
+use std::collections::{HashMap};
 
+pub struct GtfsRouteShapePoint{
+    pub shape_id: String,
+    pub shape_pt_lat: f64,
+    pub shape_pt_lon: f64,
+    pub shape_pt_sequence: i64,
+    pub shape_dist_traveled: f64,
+}
+pub struct GtfsRouteTrip{
+    pub route_id: i64,
+    pub service_id: i64,
+    pub trip_id: String,
+    pub trip_headsign: String,
+    pub direction_id: i64,
+    pub block_id: String,
+    pub shape_id: String,
+    pub wheelchair_accessible: i64,
+    pub bikes_allowed: i64,
+    pub etm_id: i64,
+}
+use gtfs_structures::{Stop,Shape,Trip,Gtfs};
+
+pub fn parse_gtfs(path: String) -> Gtfs{
+    return Gtfs::new(path.as_str()).expect("failed to parse gtfs zip");
+}
+//
+pub fn parse_stop_csv(gtfs: Gtfs) -> HashMap<String, std::sync::Arc<Stop>>{
+    println!("there are {} stops in the gtfs", gtfs.stops.len());
+    return gtfs.stops;
+}
+//
+pub fn parse_trip_csv(gtfs: Gtfs)-> HashMap<std::string::String, Trip>{
+    println!("there are {} trips in the gtfs", gtfs.trips.len());
+    return gtfs.trips;
+}
+//
+pub fn parse_shape_csv(gtfs: Gtfs)-> HashMap<std::string::String, Vec<Shape>>{
+    println!("there are {} shapes in the gtfs", gtfs.shapes.len());
+    return gtfs.shapes;
+}
 
 //use postgres::{Connection, TlsMode};
 
@@ -46,6 +86,11 @@ fn main() {
         for route in routes.iter() {
             println!("{},{}",route.route_short_name,route.route_long_name);
         }
+        let gtfs = parse_gtfs(conf.gtfs_feed);
+        let shape_ids = parse_shape_csv(gtfs);
+        for elem in shape_ids.into_iter() {
+            println!("{}",elem.0);
+        }
     }
     
 
@@ -80,6 +125,7 @@ fn print_geojson(service: Vec<GtfsVehiclePos>){
 struct Config{
     hostname: String,
     port: Option<u16>,
+    gtfs_feed: String,
     routes: Vec<String>,
     api_key: String,
 }

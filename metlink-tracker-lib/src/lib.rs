@@ -2,6 +2,9 @@ use serde_json::{Result, Value};
 use reqwest::header;
 use reqwest::blocking;
 use serde::{Serialize, Deserialize};
+use std::fs::File;
+use std::io::prelude::*;
+use std::collections::{HashMap};
 
 pub enum VehicleMethod{
     Bus,
@@ -127,5 +130,10 @@ mod tests {
         let route: GtfsRoute = serde_json::from_str(contents.as_str()).expect("failed to parse route data");
         assert_eq!(String::from("1"),route.route_short_name);
         assert_eq!(3,route.route_type);
+    }
+    #[test]
+    fn parse_route_shapes(){
+        let shape_ids = parse_shape_csv(String::from("tests/fixtures/shapes.txt"));
+        assert_eq!(shape_ids.contains("[@356.0.45924848@]4"),true);
     }
 }
