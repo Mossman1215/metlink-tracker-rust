@@ -7,6 +7,7 @@ use geo::Point;
 use serde_json::{Map, to_value};
 use clap::{App,Arg,SubCommand};
 use std::collections::{HashMap};
+use gtfs_structures::{Stop,Shape,Trip,Gtfs,DirectionType};
 
 pub struct GtfsRouteShapePoint{
     pub shape_id: String,
@@ -27,25 +28,9 @@ pub struct GtfsRouteTrip{
     pub bikes_allowed: i64,
     pub etm_id: i64,
 }
-use gtfs_structures::{Stop,Shape,Trip,Gtfs};
 
 pub fn parse_gtfs(path: String) -> Gtfs{
     return Gtfs::new(path.as_str()).expect("failed to parse gtfs zip");
-}
-//
-pub fn parse_stop_csv(gtfs: Gtfs) -> HashMap<String, std::sync::Arc<Stop>>{
-    println!("there are {} stops in the gtfs", gtfs.stops.len());
-    return gtfs.stops;
-}
-//
-pub fn parse_trip_csv(gtfs: Gtfs)-> HashMap<std::string::String, Trip>{
-    println!("there are {} trips in the gtfs", gtfs.trips.len());
-    return gtfs.trips;
-}
-//
-pub fn parse_shape_csv(gtfs: Gtfs)-> HashMap<std::string::String, Vec<Shape>>{
-    println!("there are {} shapes in the gtfs", gtfs.shapes.len());
-    return gtfs.shapes;
 }
 
 //use postgres::{Connection, TlsMode};
@@ -87,14 +72,47 @@ fn main() {
             println!("{},{}",route.route_short_name,route.route_long_name);
         }
         let gtfs = parse_gtfs(conf.gtfs_feed);
-        let shape_ids = parse_shape_csv(gtfs);
-        for elem in shape_ids.into_iter() {
-            println!("{}",elem.0);
+        let shape_ids = gtfs.shapes;
+        let trips:Vec<&Trip> = gtfs.trips.values().collect();
+        let mut shape_trip = HashMap::new();
+        for t in trips {
+            let id = t.shape_id.as_ref().unwrap();
+            shape_trip.insert(id,t);
         }
+        //get shape_id from trips and route ID
+        //from trips select unique shape_id route_id where direction = 0      
+        for (key, val) in shape_ids.into_iter(){ 
+            println!("key:{}",key);
+            //convert the unreadable ID into something readable
+            println!("val:{}",shape_trip.get(&key).unwrap().route_id);
+            //iterate over trips? 
+            //geometry -> multilinestring -> vec(points)
+            //slam into a new feature object
+        }
+        //print as geojson
     }
     
 
 }
+//fn shape_to_feature(shape_id: String, Vec<Shape>)->Vec<Feature>{
+//     let shape = map(|shapes| {
+//         // create a Vec<Position>, aka a LineStringType
+//         shapes
+//             .iter()
+//             .map(|shape| vec![shape.longitude, shape.latitude])
+//             .collect::<geojson::LineStringType>()
+//     });
+//Geometry::new(Value::Point(vec![vehic.longitude,vehic.latitude]))
+//     let geom = shape.map(|geom| geojson::Geometry::new(geojson::Value::LineString(geom)));
+//     let properties = get_route_properties(gtfs, &trip.route_id);
+//     Feature {
+//         bbox: None,
+//         geometry: geom,
+//         id: None,
+//         properties,
+//         foreign_members: None,
+//     }
+//}
 fn print_geojson(service: Vec<GtfsVehiclePos>){
     let mut geometry: Vec<Feature> = Vec::new();
     for vehic in service.iter() {
