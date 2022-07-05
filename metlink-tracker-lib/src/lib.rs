@@ -37,7 +37,29 @@ pub struct GtfsVehiclePos{
     pub start_time: String,
     pub trip_id: String,
 }
-
+//shapes are seqences of lat long points with an identifier
+#[derive(Serialize, Deserialize)]
+pub struct GtfsShape{
+    pub id: String,
+    pub pt_lat: f64,
+    pub pt_lon: f64,
+    pub pt_sequence: i64,
+    pub dist_travelled: f64
+}
+#[derive(Serialize, Deserialize)]
+pub struct GtfsTrip{
+    pub id: i64,
+    pub route_id: i64,
+    pub service_id: String,
+    pub trip_id: String,
+    pub trip_headsign: String,
+    pub direction_id: i64,
+    pub block_id: String,
+    pub shape_id: String,
+    pub wheelchair_accessible: i64,
+    pub bikes_allowed: i64
+}
+//TODO: re-use the client and create constructor function for the lib object?
 pub fn fetch_vehicles_v1(token: String) -> Vec<GtfsVehiclePos>{
     let url = String::from("https://api.opendata.metlink.org.nz/v1/gtfs-rt/vehiclepositions");
     let client = reqwest::blocking::Client::new();
@@ -69,6 +91,22 @@ pub fn fetch_routes_v1(token: String) -> Vec<GtfsRoute>{
         return routes;
     }
     return routes;
+}
+pub fn fetch_trips_v1(token: String) -> Vec<GtfsTrip>{
+    let url = String::from("https://api.opendata.metlink.org.nz/v1/gtfs/trips");
+    let client = reqwest::blocking::Client::new();
+    let request = client.get(&url).header("x-api-key",token).header(reqwest::header::ACCEPT,"application/json");
+    let met_response = request.send().unwrap();
+    let met_code = met_response.status();
+    let mut trips = Vec::new();
+    if met_code.is_success(){ 
+    let body = met_response.text().unwrap();
+        trips = parse_trips(body);
+    }else   {
+    println!("Request Failed. Status: {:?}", met_code);
+    return trips;
+    }
+    return trips;
 }
 //parse json api from routes feed
 pub fn parse_routes(contents: String)-> Vec<GtfsRoute>{
@@ -105,35 +143,7 @@ pub fn parse_vehicles(contents: String)-> Vec<GtfsVehiclePos>{
     }
     return vehicles;
 }
-#[cfg(test)]
-mod tests {
-    use super::*;
-    use std::{fs, vec};
-    use std::io::prelude::*;
-    use std::fs::File;
-    #[test]
-    fn struct_create_pos() {
-        let mut file = File::open("tests/fixtures/gtfs-rt-position.json").expect("Unable to open the file");
-        let mut contents = String::new();
-        file.read_to_string(&mut contents).expect("Unable to read the file");
-        //println!("{}", contents);
-        let trips = parse_vehicles(contents);
-        let first_pos = trips.first().unwrap();
-        assert_eq!(String::from("2__0__717__NBM__8__8_1"),first_pos.trip_id);
-        assert_eq!(174.7761536,first_pos.longitude);
-    }
-    #[test]
-    fn struct_crete_route(){
-        let mut file = File::open("tests/fixtures/gtfs-route.json").expect("Unable to open the file");
-        let mut contents = String::new();
-        file.read_to_string(&mut contents).expect("Unable to read the file");
-        let route: GtfsRoute = serde_json::from_str(contents.as_str()).expect("failed to parse route data");
-        assert_eq!(String::from("1"),route.route_short_name);
-        assert_eq!(3,route.route_type);
-    }
-    #[test]
-    fn parse_route_shapes(){
-        let shape_ids = parse_shape_csv(String::from("tests/fixtures/shapes.txt"));
-        assert_eq!(shape_ids.contains("[@356.0.45924848@]4"),true);
-    }
+pub fn parse_trips(contents: String)-> Vec<GtfsTrip>{
+    let v: Vec<GtfsTrip> = serde_json::from_str(&contents).expect("failed to parse as json");
+    return v;
 }

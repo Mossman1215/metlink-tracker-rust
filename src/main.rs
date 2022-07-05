@@ -32,7 +32,6 @@ pub struct GtfsRouteTrip{
 pub fn parse_gtfs(path: String) -> Gtfs{
     return Gtfs::new(path.as_str()).expect("failed to parse gtfs zip");
 }
-
 //use postgres::{Connection, TlsMode};
 
 fn main() {
@@ -71,27 +70,13 @@ fn main() {
         for route in routes.iter() {
             println!("{},{}",route.route_short_name,route.route_long_name);
         }
-        let gtfs = parse_gtfs(conf.gtfs_feed);
-        let shape_ids = gtfs.shapes;
-        let trips:Vec<&Trip> = gtfs.trips.values().collect();
-        let mut shape_trip = HashMap::new();
-        for t in trips {
-            let id = t.shape_id.as_ref().unwrap();
-            shape_trip.insert(id,t);
+        let trips = metlink_tracker_lib::fetch_trips_v1(token.clone());
+        for trip in trips.iter() {
+        print!("{},",trip.service_id);
         }
-        //get shape_id from trips and route ID
-        //from trips select unique shape_id route_id where direction = 0      
-        for (key, val) in shape_ids.into_iter(){ 
-            println!("key:{}",key);
-            //convert the unreadable ID into something readable
-            println!("val:{}",shape_trip.get(&key).unwrap().route_id);
-            //iterate over trips? 
-            //geometry -> multilinestring -> vec(points)
-            //slam into a new feature object
-        }
+        println!()
         //print as geojson
     }
-    
 
 }
 //fn shape_to_feature(shape_id: String, Vec<Shape>)->Vec<Feature>{
