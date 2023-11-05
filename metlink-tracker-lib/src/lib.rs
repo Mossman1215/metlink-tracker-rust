@@ -11,6 +11,12 @@ pub enum VehicleMethod{
     Train,
     Other
 }
+#[derive(Serialize, Deserialize)]
+struct Stop{ id: i64, location_type: i64, parent_station: String, stop_code: String, stop_desc: String, stop_id: String, stop_lat: f64, stop_lon: f64, stop_name: String, stop_timezone: String, stop_url: String, zone_id: String }
+#[derive(Serialize, Deserialize)]
+struct Trip{ bikes_allowed: i64, block_id: String, direction_id: i64, route_id: i64, service_id: String, shape_id: String, trip_headsign: String, trip_id: String, wheelchair_accessible: i64 }
+#[derive(Serialize, Deserialize)]
+struct ShapePt{ id: i64, shape_dist_traveled: i64, shape_id: String, shape_pt_lat: f64, shape_pt_lon: f64, shape_pt_sequence: i64 }
 
 #[derive(Serialize, Deserialize)]
 pub struct GtfsRoute{
